@@ -21,17 +21,13 @@ def convert_to_dict():
         ('Thompson', '1949'),
         ('Burton', '1939')
     ]
-
-    # Create the dictionary
-    year_to_musicians = {}
-    for name, year in d:
-        if year not in year_to_musicians:
-            year_to_musicians[year] = []
-        year_to_musicians[year].append(name)
-
-    # Print the dictionary in the specified format
-    for year, names in year_to_musicians.items():
-        print(f"{year} : {' '.join(names)}")
+    rev_d = {}
+    for name , year in d:
+        rev_d[year] = name
+    
+    for key in sorted(rev_d.keys()):
+        print(key, ":", rev_d[key])
+        
 
 if __name__ == "__main__":
     convert_to_dict()
