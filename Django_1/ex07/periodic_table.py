@@ -1,3 +1,4 @@
+import sys
 def line_to_dict(line):
     line = line.strip("\n").strip()
     if not line:
@@ -16,13 +17,21 @@ def line_to_dict(line):
     return periodic_case
 
 
+
 def read_file(file):
     periodic_table = []
-    with open(file, "r") as fd:
-        for line in fd:
-            elem_dict = line_to_dict(line)
-            if elem_dict:
-                periodic_table.append(elem_dict)
+    try:
+        with open(file, "r", encoding="utf-8") as fd:
+            for line in fd:
+                elem_dict = line_to_dict(line)
+                if elem_dict:
+                    periodic_table.append(elem_dict)
+    except FileNotFoundError:
+        print(f"Error: The file '{file}' does not exist.")
+        sys.exit(1)
+    except Exception as e:
+        print(f"Error reading file '{file}': {e}")
+        sys.exit(1)
     return periodic_table
 
 def periodic_table_to_html(periodic_table):
