@@ -1,16 +1,20 @@
 def line_to_dict(line):
-    line = line.strip("\n")
+    line = line.strip("\n").strip()
+    if not line:
+        return None
+
     periodic_case = {}
     new_line = line.split("=")
 
-    periodic_case['element'] = new_line[0]
-    periodic_case[new_line[1].split(",")[0].split(":")[0]] = new_line[1].split(",")[0].split(":")[1]
-    periodic_case[new_line[1].split(",")[1].split(":")[0]] = new_line[1].split(",")[1].split(":")[1]
-    periodic_case[new_line[1].split(",")[2].split(":")[0]] = new_line[1].split(",")[2].split(":")[1]
-    periodic_case[new_line[1].split(",")[3].split(":")[0]] = new_line[1].split(",")[3].split(":")[1]
-    periodic_case[new_line[1].split(",")[4].split(":")[0]] = new_line[1].split(",")[4].split(":")[1]
-    # print(periodic_case)
+    periodic_case['element'] = new_line[0].strip()
+    periodic_case[new_line[1].split(",")[0].split(":")[0].strip()] = new_line[1].split(",")[0].split(":")[1].strip()
+    periodic_case[new_line[1].split(",")[1].split(":")[0].strip()] = new_line[1].split(",")[1].split(":")[1].strip()
+    periodic_case[new_line[1].split(",")[2].split(":")[0].strip()] = new_line[1].split(",")[2].split(":")[1].strip()
+    periodic_case[new_line[1].split(",")[3].split(":")[0].strip()] = new_line[1].split(",")[3].split(":")[1].strip()
+    periodic_case[new_line[1].split(",")[4].split(":")[0].strip()] = new_line[1].split(",")[4].split(":")[1].strip()
+
     return periodic_case
+
 
 def read_file(file):
     periodic_table = []
