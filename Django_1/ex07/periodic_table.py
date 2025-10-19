@@ -59,7 +59,7 @@ body { font-family: Arial, sans-serif; margin: 20px; }
 <div class="periodic-grid">
 """
     for elem in periodic_table:
-        col = int(elem.get('position', 0)) + 1  # Grid column starts from 1
+        col = int(elem.get('position', 0)) + 1
         html += f'<div class="element" style="grid-column:{col}">'
         html += f'<span class="symbol">{elem.get("small","")}</span>'
         html += f'<span class="number">{elem.get("number","")}</span>'
