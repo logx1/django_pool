@@ -29,7 +29,10 @@ def create(file_name):
 
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     if len(sys.argv) == 2:
-        create(sys.argv[1])
+        if re.search('\.template$', sys.argv[1]) is not None:
+            create(sys.argv[1])
+        else:
+            print("in argument must be a .template file")
 
