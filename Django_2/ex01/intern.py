@@ -38,5 +38,5 @@ if __name__ == "__main__":
 
     print("End of intern.py")
 
-    exprisso = Intern.Coffee()  # Fixed this line
+    exprisso = Intern.Coffee()
     print(exprisso)

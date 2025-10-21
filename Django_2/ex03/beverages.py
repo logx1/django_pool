@@ -32,7 +32,6 @@ class Tea(HotBeverage):
 
 
 class Chocolate(HotBeverage):
-
     def __init__(self, Price=0.50, Name="chocolate"):
         HotBeverage.__init__(self, Price, Name)
 

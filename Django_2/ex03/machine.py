@@ -9,27 +9,22 @@ class CoffeeMachine(object):
 
         def __init__(self, Price=0.90, Name="empty cup"):
             beverages.HotBeverage.__init__(self, Price, Name)
-
         def description(self):
             return "An empty cup?! Gimme my money back"
-
     def __init__(self):
         self.broken = 0
-
     def repair(self):
         self.broken = 0
 
-    def serve(self, hot_beverage_class):
-        if not issubclass(hot_beverage_class, beverages.HotBeverage):
-            raise Exception("the parameter must be a class inherited from of HotBeverage")
+    def serve(self, beverag_class):
+        if not issubclass(beverag_class, beverages.HotBeverage):
+            raise Exception("parameter must be a class inherited from of HotBeverage")
         if self.broken >= 10:
             raise self.BrokenMachineException()
         else:
             self.broken += 1
-            return hot_beverage_class() if random.randrange(2) else self.EmptyCup()
+            return beverag_class() if random.randrange(2) else self.EmptyCup()
         
-        
-
 if __name__ == "__main__":
     machine = CoffeeMachine()
     for _ in range(12):
