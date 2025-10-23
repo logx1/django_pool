@@ -39,3 +39,5 @@ Vagrantfile
 
 **/myvenv/**
 **/myenv/**
+**/local_lib/**
+install.log

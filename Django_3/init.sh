@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apk update && sudo apk upgrade
+sudo apk update && sudo apk upgrade && sudo apk add git
 sudo apk add build-base libffi-dev openssl-dev bzip2-dev zlib-dev xz-dev
 sudo wget https://www.python.org/ftp/python/3.12.3/Python-3.12.3.tgz
 sudo tar -xvzf Python-3.12.3.tgz
