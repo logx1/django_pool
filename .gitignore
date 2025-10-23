@@ -38,3 +38,4 @@ Vagrantfile
 **/.vagrant/**
 
 **/myvenv/**
+**/myenv/**
