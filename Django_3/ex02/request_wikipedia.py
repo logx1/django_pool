@@ -27,6 +27,7 @@ class WikiApi:
             self.filename = "_".join(search.split()) + ".wiki"
             self.search_params['srsearch'] = search.lower()
             self.page_ids = []
+            self.pages_content = []
         else:
             print("You must specify something to search.\n")
             return
@@ -57,6 +58,19 @@ class WikiApi:
             print("error in page fetvhing \n")
         data = res.json()
         return data["query"]["pages"][str(pageid)]["extract"]
+    
+    def all(self):
+        res = []
+        for pid in self.page_ids:
+            res.append(self.get_page_extract(pid))
+        
+        self.pages_content = res
+    
+    def save(self):
+        with open(self.filename, 'w', encoding='utf-8') as f:
+            for content in self.pages_content:
+                f.write("\t" + content + "\n\n")
+        print(f"Content saved to {self.filename}")
         
 
 
@@ -68,14 +82,12 @@ if __name__ == "__main__":
             print("no rusolt fro wiki ")
         else:
             print(json.dumps(test.search()["query"]["search"][0]["pageid"], indent=4))
-            print("\n the length of extract is : " , len(test.search()["query"]["search"]))
-            list_of_page_ids = []
-            for el in test.search()["query"]["search"]:
-                list_of_page_ids.append(el["pageid"])
-                print("--------------------------------------------------\n")
+
         page = WikiApi("chocolatine").get_page_extract(test.search()["query"]["search"][0]["pageid"])
-        print(page)
-        # print(list_of_page_ids)
+
+        test.get_page_ids(test.search())
+        test.all()
+        test.save()
         
     else:
         print("ERRor the correct : python request_wikipedia.py keyword")
