@@ -41,3 +41,4 @@ Vagrantfile
 **/myenv/**
 **/local_lib/**
 install.log
+*.wiki
