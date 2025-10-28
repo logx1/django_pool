@@ -39,6 +39,7 @@ Vagrantfile
 
 **/myvenv/**
 **/myenv/**
+**/django_venv/**
 **/local_lib/**
 install.log
 *.wiki
