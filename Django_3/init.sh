@@ -16,6 +16,7 @@ sudo make install
 # Update the default python3 binary
 sudo mv /usr/bin/python3 /usr/bin/python3.bak
 sudo ln -s /usr/local/bin/python3.12 /usr/bin/python3
+sudo apk add --no-cache postgresql-dev gcc python3-dev musl-dev
 
 # sudo rm -rf Python-3.12.3
 # sudo rm Python-3.12.3.tgz
