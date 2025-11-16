@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex01: Template engine.</title>
+</head>
+<body>
+    <h1>Static Web Page Request Process</h1>
+    
+    <p>This page explains the process that occurs when a browser requests a static web page, from the initial request to the final display.</p>
+    
+    <h2>The Request-Response Cycle</h2>
+    
+    <div class="step">
+        <span class="step-number">1</span>
+        <strong>User Request</strong>
+        <p>The process begins when a user enters a URL in their browser or clicks on a link. The browser creates an HTTP request and sends it to the appropriate web server.</p>
+    </div>
+    
+    <div class="step">
+        <span class="step-number">2</span>
+        <strong>Server Receives Request</strong>
+        <p>The web server receives the HTTP request and examines it to determine which resource is being requested (typically an HTML file).</p>
+    </div>
+    
+    <div class="step">
+        <span class="step-number">3</span>
+        <strong>File Retrieval</strong>
+        <p>The server locates the requested static file (HTML, CSS, JavaScript, images, etc.) in its file system. For a simple template, this would be a pre-existing HTML file.</p>
+    </div>
+    
+    <div class="step">
+        <span class="step-number">4</span>
+        <strong>Server Processing (Optional)</strong>
+        <p>For a truly static page, the server sends the file as-is. However, if using a simple template system, the server might perform minimal processing like inserting variables or including partial templates.</p>
+    </div>
+    
+    <div class="step">
+        <span class="step-number">5</span>
+        <strong>HTTP Response</strong>
+        <p>The server creates an HTTP response containing the HTML content, along with appropriate headers (status code, content type, etc.), and sends it back to the browser.</p>
+    </div>
+    
+    <div class="step">
+        <span class="step-number">6</span>
+        <strong>Browser Processing</strong>
+        <p>The browser receives the response and begins parsing the HTML, constructing the Document Object Model (DOM) tree.</p>
+    </div>
+    
+    <div class="step">
+        <span class="step-number">7</span>
+        <strong>Rendering</strong>
+        <p>The browser renders the page by combining the DOM with CSS styling and executing any JavaScript, ultimately displaying the final web page to the user.</p>
+    </div>
+    
+    <h2>Visual Representation</h2>
+    
+    <div class="diagram">
+Browser Request → Server Processing → File Retrieval → HTTP Response → Browser Rendering → Page Display
+    </div>
+    
+    <div class="note">
+        <strong>Note:</strong> For dynamic web pages, the process is more complex and typically involves server-side processing, database queries, and application logic before the final HTML is generated and sent to the browser.
+    </div>
+    
+    <p>This simple process allows users to view static content on the web with minimal delay between request and display.</p>
+</body>
+</html>
